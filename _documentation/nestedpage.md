@@ -1,11 +1,7 @@
 ---
 layout: nested
-title: Chapter 2
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit
-files:
-  - 'subchapter_1'
-  - 'subchapter_2'
-  - 'subchapter_3'
+title: Nested Page
+description: How to configure your nested pages and content pages
 ---
 
 # Lorem Ipsum 01

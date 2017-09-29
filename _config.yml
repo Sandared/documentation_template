@@ -34,6 +34,7 @@ github_button:
 twitter_button:
   user: SanfteSchorle
 
+# any of these collections is used for nested pages
 collections:
   landingpage:
     output: true

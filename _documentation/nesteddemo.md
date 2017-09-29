@@ -1,7 +1,11 @@
 ---
 layout: nested
-title: Chapter 1
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit
+title: Nested Demo
+description: A demonstration of nested sites
+files:
+  - 'subchapter_1'
+  - 'subchapter_2'
+  - 'subchapter_3'
 ---
 
 # Lorem Ipsum 01
