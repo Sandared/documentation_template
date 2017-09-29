@@ -33,7 +33,7 @@
 		
 		{% if isNested %}
 			<div id="text-content" class="section col s12">
-				{% include templates/breadcrumbs.html %}
+				{% include templates/breadcrumbs.html %}				
 				{{content}}
 			</div>
 			<!--add all files in this folder-->
@@ -41,7 +41,13 @@
 			<!-- create path to the file --> 
 				{% assign fileHTMLPath = rootPath | append: file | append: ".html" %}
 				<!--find the file-->
-				{% assign htmlFile = site.documentation | where_exp:"item", "item.url == fileHTMLPath" | first  %}
+				{% for collection in site.collections %}				
+					{% assign htmlFile = collection.docs | where_exp:"item", "item.url == fileHTMLPath" | first  %}
+					{% if htmlFile %}
+						{% break %}
+					{% endif %}
+				{% endfor %}
+				
 				<!--create a card for each-->
 				<div class="col s12 m8 push-m2 l6 xl4">
 					<div class="card small hoverable">
@@ -60,7 +66,12 @@
 				<!-- create path to the info.html file that is mandatory for each subfolder --> 
 				{% assign subfolderInfoHTMLPath = rootPath | append: subfolder | append: ".html" %}
 				<!--find the subfolderInfo.md file-->
-				{% assign subfolderInfo = site.documentation | where_exp:"item", "item.url == subfolderInfoHTMLPath" | first  %}
+				{% for collection in site.collections %}				
+					{% assign subfolderInfo = collection.docs | where_exp:"item", "item.url == subfolderInfoHTMLPath" | first  %}
+					{% if subfolderInfo %}
+						{% break %}
+					{% endif %}
+				{% endfor %}
 				<!--create a card for each-->
 				<div class="col s12 m8 push-m2 l6 xl4">
 					<div class="card small hoverable">
