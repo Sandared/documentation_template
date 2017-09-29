@@ -1,6 +1,6 @@
 ---
 layout: peptalk
-icon: group
-title: User Experience Focused
+icon: color_lens
+title: Folly Adaptable Color Scheme
 ---
-Works on any device!
+You want to adapt the template to the colors of your choice? You can easily do so by setting four different colors (primary, primaryDark, primaryLight, accent) and getting them applied throughout the whole site! No more messing around with the css of the template!

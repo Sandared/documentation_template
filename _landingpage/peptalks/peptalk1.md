@@ -1,6 +1,6 @@
 ---
 layout: peptalk
-icon: flash_on
-title: Speeds up development
+icon: flight_land
+title: Adaptable Landing Page
 ---
-We did the heavy lifting
+We've created a fully adaptable landing page for you! Header, Peptalks and News section is customizable to your needs!
