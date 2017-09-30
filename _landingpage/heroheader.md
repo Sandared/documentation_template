@@ -2,7 +2,7 @@
 layout: heroheader
 button:
   text: Get Started!
-  url: /documentation.html
+  url: https://sandared.github.io/documentation_template/documentation.html
 title: Project Documentation Template
 subtitle: The Easy Way Towards Project Documentation
 version: 1.0.0

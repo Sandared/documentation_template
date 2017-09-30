@@ -1,8 +1,7 @@
 title: PDT
 author: Thomas Driessen
 email: thomas.driessen.td@gmail.com
-description: > # this means to ignore newlines until "baseurl:"
-  A Project Documentation Template for Jekyll
+description: A Project Documentation Template for Jekyll
 
 # language to use in html tag, can be overriden by page.lang
 # lang: en 

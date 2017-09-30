@@ -7,20 +7,56 @@ subfolders:
 files:
   - 'landingpage'
   - 'nestedpage'
+  - 'content'
 ---
 
-# How to Configure this Site?
+# How to Configure this Template?
 
-For this template we have created three major features:
+Every Jekyll Template is configured through 
 
-* Fully adaptable color scheme
-* Nested pages
-* Landing page
+* its *_config.yml* file 
+* *front matter* in each page
 
-The nested and landing pages are explained in detail in their own chapter (see the end of this site). 
-The fully adaptable color scheme, as well as arbitrary collections (used for nested pages) are defined in the config.yml file in the root of the site's directory.
+First let's have a look at the possible configuration properties offered by this template:
 
-In order to adapt the color scheme have a look at the configuration file depicted below:
+## Standard Stuff
+
+Virtually any template offers stuff like social media buttons, github buttons, a site name, a logo and stuff like this.
+This can be configured through the following properties:
+
+```
+---
+title: PDT
+author: Thomas Driessen
+email: thomas.driessen.td@gmail.com
+description: A Project Documentation Template for Jekyll
+
+# language to use in html tag, can be overriden by page.lang
+# lang: en 
+
+sass:
+    style: compressed
+
+# path to logo without leading slash e.g. images/logo.png or just the file name if it is in the root directory
+logo: logo.png
+
+# Github data, if present there will be a GitHub button in the navbar
+github_button:
+  user: Sandared
+  project: documentation_template
+
+# Twitter data, if present there will be a Twitter button in the navbar
+twitter_button:
+  user: SanfteSchorle
+---
+```
+
+All of these properties are selfexplanatory or are explained through the comments in the *_config.yml* file.
+
+## Colors
+
+As mentioned on our landing page, this template provides a fully adaptable color scheme. 
+We ourselves have been frustrated to adapt each template to our needs when it comes to colors, so we provide a simple mechanism to change the complete look and feel of the whole site:
 
 ```
 ---
@@ -35,7 +71,68 @@ colors:
     inverse_text: white
     divider: grey-lighten-1
     secondaryBackground: grey-lighten-4
+---
+```
 
+Usually you will only change the first 4 colors:
+
+* primary_dark
+* pimary_light
+* primary
+* accent 
+
+The predefined colors can be found on the [Materialize CSS Color Page](http://materializecss.com/color.html). Usually you choose one color as primary and then go up and down 2-3 steps for the primary_dark and primary_light. 
+Choose the accent color as you wish.
+Be careful if you choose very light colors, you might have to adapt the secondaryBackground, as it is used for code highlighting. 
+
+### Primary_Dark
+
+This color is used rather sparse throughout the website. Only the Heroheader and the News badges are currently making use of it.
+
+### Primary_Light
+
+This color is used in 
+
+* Heroheader
+* Newsitem badges
+* News Header
+* Links
+* Code Highlighting (very often)
+* Breadcrumb Navigation
+* Table of Contents
+
+### Primary 
+
+This color is used in 
+
+* Headers
+* Navbars
+* Newsitem badges 
+* Code Highlighting (very often)
+* Cards
+
+### Accent
+
+This color is used in 
+
+* Link::hover
+* Page Footer
+* Table of Contents
+* Heroheader button
+* Blockquotes
+* Breadcrumbs
+* Code Highlighting
+
+We recommend to play aroud with these colors to create a site that looks good to you. 
+Remember that you have to restart the Jekyll Server each time you change the colors, as the configuration file is only readat startup.
+
+## Additional Collections
+
+Well, this isn't directly a feature provided by us, but by Jekyll. We merely enhanced it a little bit.
+
+```
+---
+# any of these collections is used for nested pages
 collections:
   landingpage:
     output: true
@@ -44,17 +141,4 @@ collections:
 ---
 ```
 
-## Color Scheme
-
-The interesting part is the **colors** property. The colors can be taken from the [materialize color palette](http://materializecss.com/color.html). Nearly all of the possible combination tend to look good... somehow ;)
-The primary colors are those that are used the majority of time on this site, e.g. for the Heroheader, text, links, headers, and stuff like that. The accent color is used rather sparse throughout the site, as the name implies it's merley for setting accents.
-The text color is rather selfexplanatory. The inverse text color(usually whit if the text is black or vice versa) is used for example in the button text of the Heroheader.
-Secondary background is used for code sections and the landing page news section as background color. The divider color is used for what its name implies: dividers.
-
-We recommend to play aroud with these colors to create a site that looks good to you. Remember that you have to restart the Jekyll Server each time you change the colors, as the configuration file is only readat startup.
-
-## Nested Pages and Additional Collections
-
-Usually Jekyll has a flat folder structure and it is not really easy to create a hierarchical structure of webpages. The best Jekyll offers is a hierarchy of posts and categories.
-We have created a template (nested) that allows you to structure content hierarchically with a little additional information in the front matter of your pages.
-In order to create new nested pages you usually create a new [collection in Jekyll](https://jekyllrb.com/docs/collections/). For the use of **nested** templates have a look at the [Nested Page Documentation](/documentation/nestedpage.html)
+Any collection added to the collections section is searched by our *nested* template for pages it can display in a nested way.

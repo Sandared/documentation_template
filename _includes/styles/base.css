@@ -24,7 +24,6 @@ main{flex: 1 0 auto;}
 .side-nav li>a{color: {{primaryColor}};}
 .side-nav .collapsible-header, .side-nav.fixed .collapsible-header{padding-left:32px;}
 .side-nav .collapsible-body li a, .side-nav.fixed .collapsible-body li a{padding-left:47px;}
-.dropdown-content li>a, .dropdown-content li>span{color: {{primaryColor}};}
 h1,h2,h3,h4,h5,h6{-webkit-font-smoothing: antialiased;}
 .icon-block{padding: 0 15px;}
 .icon-block .material-icons{font-size: inherit;}
